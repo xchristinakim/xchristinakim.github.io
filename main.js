@@ -12,7 +12,8 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ===== TAB FILTER =====
 const tabBtns = document.querySelectorAll('.tab-btn');
-const cards = document.querySelectorAll('.project-card');
+// support both card grid and list row layouts
+const projectItems = document.querySelectorAll('.project-card, .project-row');
 
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -21,22 +22,21 @@ tabBtns.forEach(btn => {
     tabBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    cards.forEach(card => {
-      if (card.dataset.category === tab) {
-        card.style.display = 'flex';
-        // re-trigger reveal for newly shown cards
-        setTimeout(() => card.classList.add('in-view'), 50);
+    projectItems.forEach(item => {
+      if (item.dataset.category === tab) {
+        item.style.display = '';
+        setTimeout(() => item.classList.add('in-view'), 50);
       } else {
-        card.style.display = 'none';
+        item.style.display = 'none';
       }
     });
   });
 });
 
 // init: show medical, hide design
-cards.forEach(card => {
-  if (card.dataset.category === 'design') {
-    card.style.display = 'none';
+projectItems.forEach(item => {
+  if (item.dataset.category === 'design') {
+    item.style.display = 'none';
   }
 });
 
