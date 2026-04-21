@@ -6,14 +6,14 @@
   <title>Christina Kim — About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">CK</a>
+      <a href="index.html" class="logo">Christina Kim</a>
       <div class="nav-links">
         <a href="index.html" class="nav-link">projects</a>
         <a href="fun.html" class="nav-link">fun</a>
@@ -22,103 +22,105 @@
     </div>
   </nav>
 
-  <div class="about-main">
-
-    <!-- Top: photo collage + Q&A -->
-    <div class="about-top">
-      <div class="photo-collage reveal">
-        <div class="photo photo-1"><div class="photo-placeholder">photo</div></div>
-        <div class="photo photo-2"><div class="photo-placeholder">photo</div></div>
-        <div class="photo photo-3"><div class="photo-placeholder">photo</div></div>
-        <span class="handwritten hw-1">that's me!</span>
-        <span class="handwritten hw-2">me again!</span>
+  <!-- Full-bleed split: photo left, bio right on dark bg -->
+  <div class="bleed" style="margin-top: var(--nav-h);">
+    <div class="about-split reveal">
+      <div class="about-split-photo">
+        add photo here
       </div>
-
-      <div class="about-qa">
-        <div class="qa-block reveal">
-          <h2>Who?</h2>
-          <p>I'm a senior at Northwestern University studying Biomedical Engineering with a minor in Entrepreneurship and a Segal Design Certificate in Product Development. I love building things that sit at the intersection of engineering, health, and human experience.</p>
+      <div class="about-split-content">
+        <p class="about-split-eyebrow">// who is she</p>
+        <h2 class="about-split-heading">
+          Hi, I'm Christina.<br>
+          <em>Nice to meet you.</em>
+        </h2>
+        <div class="about-qa">
+          <div class="qa-block">
+            <h3>Who?</h3>
+            <p>Senior at Northwestern studying Biomedical Engineering with a minor in Entrepreneurship and a Segal Design Certificate in Product Development. I love building things at the intersection of engineering, health, and human experience.</p>
+          </div>
+          <div class="qa-block">
+            <h3>Beyond the Lab?</h3>
+            <p>When I'm not iterating on prototypes or running usability studies, you can find me exploring new coffee spots, staying curious about the world, and mentoring younger engineers through Kappa Theta Pi.</p>
+          </div>
+          <div class="qa-block">
+            <h3>Why Biomedical Engineering?</h3>
+            <p>From authoring a utility patent to leading FDA registration prep for a pediatric device, I've always aimed to engineer solutions that genuinely help people — through rapid prototyping, human factors research, or a well-placed business case.</p>
+          </div>
         </div>
-        <div class="qa-block reveal">
-          <h2>Beyond the Lab?</h2>
-          <p>When I'm not iterating on prototypes, you can find me trying new coffee spots, exploring cities, or mentoring younger engineers. I believe the best designs come from living a full life outside the lab.</p>
-        </div>
-        <div class="qa-block reveal">
-          <h2>Why Biomedical Engineering?</h2>
-          <p>From authoring a utility patent to leading FDA registration for a pediatric device, I've always aimed to create solutions that help and benefit real people — whether through rapid prototyping, human factors research, or a well-placed business case.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Banner -->
-    <div class="about-banner reveal">
-      <p>I love engineering solutions that sit at the edge of science and humanity.</p>
-    </div>
-
-    <!-- Skills marquee -->
-    <div class="marquee-wrap">
-      <div class="marquee-track">
-        <!-- first copy -->
-        <span class="marquee-item">🧪 MATLAB</span>
-        <span class="marquee-item">🖨️ 3D Printing (FDM/SLA)</span>
-        <span class="marquee-item">🌊 ANSYS / CFD</span>
-        <span class="marquee-item">🎨 Figma</span>
-        <span class="marquee-item">🐍 Python</span>
-        <span class="marquee-item">📋 FMEA</span>
-        <span class="marquee-item">📜 Patent Drafting</span>
-        <span class="marquee-item">🔬 V&amp;V Testing</span>
-        <span class="marquee-item">📊 Data Analysis</span>
-        <span class="marquee-item">🏥 FDA Regulatory</span>
-        <!-- duplicate for seamless loop -->
-        <span class="marquee-item">🧪 MATLAB</span>
-        <span class="marquee-item">🖨️ 3D Printing (FDM/SLA)</span>
-        <span class="marquee-item">🌊 ANSYS / CFD</span>
-        <span class="marquee-item">🎨 Figma</span>
-        <span class="marquee-item">🐍 Python</span>
-        <span class="marquee-item">📋 FMEA</span>
-        <span class="marquee-item">📜 Patent Drafting</span>
-        <span class="marquee-item">🔬 V&amp;V Testing</span>
-        <span class="marquee-item">📊 Data Analysis</span>
-        <span class="marquee-item">🏥 FDA Regulatory</span>
       </div>
     </div>
+  </div>
 
-    <!-- Core values -->
-    <div class="values-heading reveal">My core values</div>
+  <!-- Skills marquee -->
+  <div class="bleed bleed-cream">
+    <div class="marquee-section">
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+          <span class="marquee-item"><span class="marquee-dot"></span>MATLAB</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>3D Printing (FDM/SLA)</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>ANSYS / CFD</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Figma</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Python</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>FMEA</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Patent Drafting</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>V&amp;V Testing</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>FDA Regulatory</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Human Factors</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>MATLAB</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>3D Printing (FDM/SLA)</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>ANSYS / CFD</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Figma</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Python</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>FMEA</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Patent Drafting</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>V&amp;V Testing</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>FDA Regulatory</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Human Factors</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core values -->
+  <div class="about-body">
+    <h2 class="about-body-heading reveal">What I believe in.</h2>
     <div class="values-grid">
       <div class="value-card reveal">
-        <div class="value-icon">CK</div>
+        <p class="value-num">01</p>
         <p>Always lead with the human in mind.</p>
       </div>
       <div class="value-card reveal">
-        <div class="value-icon">CK</div>
+        <p class="value-num">02</p>
         <p>Iterate fast, fail early, learn always.</p>
       </div>
       <div class="value-card reveal">
-        <div class="value-icon">CK</div>
+        <p class="value-num">03</p>
         <p>Good engineering is invisible — it just works.</p>
       </div>
       <div class="value-card reveal">
-        <div class="value-icon">CK</div>
+        <p class="value-num">04</p>
         <p>Be scared for 5 seconds, then go build it anyway.</p>
       </div>
     </div>
-
   </div>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-logo">CK <span class="toodles">Toodles ✌️</span></div>
-        <p class="footer-sub">always open to connecting and chatting!</p>
+  <div class="bleed bleed-dark">
+    <footer class="footer">
+      <div class="footer-inner bleed-inner">
+        <div>
+          <div class="footer-logo">Christina Kim</div>
+          <div class="footer-sign">until next time —</div>
+          <p class="footer-sub">always open to connecting about engineering & design.</p>
+        </div>
+        <div class="footer-links">
+          <a href="About me/Chrisina Kim Resume.pdf" target="_blank">resume</a>
+          <a href="https://www.linkedin.com/in/christina-kim-08b3a5230/" target="_blank">linkedin</a>
+          <a href="mailto:christina.kim670@u.northwestern.edu">email</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="About me/Chrisina Kim Resume.pdf" target="_blank">resume</a>
-        <a href="https://www.linkedin.com/in/christina-kim-08b3a5230/" target="_blank">linkedin</a>
-        <a href="mailto:christina.kim670@u.northwestern.edu">email</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="main.js"></script>
 </body>

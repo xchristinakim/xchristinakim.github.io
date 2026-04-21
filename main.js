@@ -12,32 +12,24 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ===== TAB FILTER =====
 const tabBtns = document.querySelectorAll('.tab-btn');
-const cards = document.querySelectorAll('.project-card');
+const projectItems = document.querySelectorAll('[data-category]');
 
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.dataset.tab;
-
     tabBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    cards.forEach(card => {
-      if (card.dataset.category === tab) {
-        card.style.display = 'flex';
-        // re-trigger reveal for newly shown cards
-        setTimeout(() => card.classList.add('in-view'), 50);
-      } else {
-        card.style.display = 'none';
-      }
+    projectItems.forEach(item => {
+      const show = item.dataset.category === tab;
+      item.style.display = show ? '' : 'none';
+      if (show) setTimeout(() => item.classList.add('in-view'), 50);
     });
   });
 });
 
 // init: show medical, hide design
-cards.forEach(card => {
-  if (card.dataset.category === 'design') {
-    card.style.display = 'none';
-  }
+projectItems.forEach(item => {
+  if (item.dataset.category === 'design') item.style.display = 'none';
 });
 
 // ===== NAV ACTIVE STATE =====
