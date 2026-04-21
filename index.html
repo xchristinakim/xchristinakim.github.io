@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christina Kim — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">CK</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">projects</a>
+        <a href="fun.html" class="nav-link">fun</a>
+        <a href="about.html" class="nav-link">about</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <p class="hero-greeting">Heya! 👋</p>
+      <h1 class="hero-name">
+        <span class="hero-deco pencil">✏️</span>
+        my name is <span class="name-highlight">Christina Kim</span>
+        <span class="hero-deco sparkle">✦</span>
+      </h1>
+      <p class="hero-tagline">
+        I'm on a mission to engineer solutions that matter — bridging biomedical science,
+        human-centered design, and real-world impact through every device I touch.
+      </p>
+
+      <div class="avatar-area">photo</div>
+
+      <div class="tab-filter">
+        <div class="tab-filter-inner">
+          <button class="tab-btn active" data-tab="medical">
+            <span>⚕️</span> Medical Devices
+          </button>
+          <div class="tab-divider"></div>
+          <button class="tab-btn" data-tab="design">
+            <span>🔧</span> Design & Engineering
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects-grid">
+
+      <!-- MEDICAL DEVICES -->
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">TubiHold</h3>
+          <div class="project-tags">
+            <span class="tag tag-teal">Medical Device</span>
+            <span class="tag tag-orange">Patent Pending</span>
+          </div>
+          <p class="project-desc">A non-invasive tube securement system developed at Lurie Children's Hospital, eliminating tape-based skin trauma and mitigating hazards in high-acuity cardiac environments through 7+ design iterations and clinical usability validation.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">TB Aerosol Diagnostics</h3>
+          <div class="project-tags">
+            <span class="tag tag-teal">Capstone</span>
+            <span class="tag tag-purple">CFD / ANSYS</span>
+          </div>
+          <p class="project-desc">Engineering an aerosol capture device to detect TB in non-sputum producing patients — using computational fluid dynamics and a nebulizer-based cough generator to bridge global health gaps for pediatric and elderly populations.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">CardioVIBES</h3>
+          <div class="project-tags">
+            <span class="tag tag-orange">Business Case</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Vantive R&amp;D</h3>
+          <div class="project-tags">
+            <span class="tag tag-teal">Industry</span>
+            <span class="tag tag-purple">NDA</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Blood Pressure Cuff</h3>
+          <div class="project-tags">
+            <span class="tag tag-teal">Medical Device</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="medical" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Kidney 3D Print Capstone</h3>
+          <div class="project-tags">
+            <span class="tag tag-orange">3D Printing</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <!-- DESIGN & ENGINEERING -->
+      <a class="project-card reveal" data-category="design" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">ADD Showering System</h3>
+          <div class="project-tags">
+            <span class="tag tag-purple">Design Award</span>
+            <span class="tag tag-teal">Systems Engineering</span>
+          </div>
+          <p class="project-desc">An automated shower assistance system for a 600+ resident care facility, designed using IDD and ABA therapy research to reduce supervision burden and improve operational efficiency for individuals with disabilities.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="design" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Litter Box</h3>
+          <div class="project-tags">
+            <span class="tag tag-orange">Product Design</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="design" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Muscle Game &amp; Emoji Circuits</h3>
+          <div class="project-tags">
+            <span class="tag tag-purple">Electronics</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" data-category="design" href="#">
+        <div class="project-img placeholder-img"></div>
+        <div class="project-info">
+          <h3 class="project-title">Cutting Board</h3>
+          <div class="project-tags">
+            <span class="tag tag-orange">Product Design</span>
+          </div>
+          <p class="project-desc"></p>
+        </div>
+      </a>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">CK <span class="toodles">Toodles ✌️</span></div>
+        <p class="footer-sub">always open to connecting and chatting about design!</p>
+      </div>
+      <div class="footer-links">
+        <a href="About me/Chrisina Kim Resume.pdf" target="_blank">resume</a>
+        <a href="https://www.linkedin.com/in/christina-kim-08b3a5230/" target="_blank">linkedin</a>
+        <a href="mailto:christina.kim670@u.northwestern.edu">email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
