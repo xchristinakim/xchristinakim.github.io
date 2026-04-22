@@ -50,8 +50,9 @@ if (contactForm) {
     });
 
     if (res.ok) {
-      contactForm.hidden = true;
+      contactForm.style.display = 'none';
       formSuccess.hidden = false;
+      formSuccess.style.display = 'flex';
     } else {
       btn.textContent = 'Something went wrong — try again';
       btn.disabled = false;

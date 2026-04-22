@@ -780,6 +780,8 @@ a { text-decoration: none; color: inherit; }
 }
 .form-submit:hover { background: var(--rust); transform: translateY(-1px); }
 
+.form-wrapper { position: relative; }
+
 .form-success {
   display: flex;
   flex-direction: column;
@@ -792,7 +794,7 @@ a { text-decoration: none; color: inherit; }
   border-radius: 16px;
   gap: 12px;
 }
-.form-success[hidden] { display: none; }
+.form-success[hidden] { display: none !important; }
 
 .form-success-icon {
   font-size: 32px;
