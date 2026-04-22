@@ -465,7 +465,7 @@ a { text-decoration: none; color: inherit; }
 
 .about-split-photo {
   background: var(--cream-dark);
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -662,6 +662,134 @@ a { text-decoration: none; color: inherit; }
   font-size: 13px;
 }
 .fun-photo-placeholder::after { content: "photo"; }
+
+/* ===== PROJECT SUBPAGE ===== */
+.project-page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 52px;
+  padding-top: calc(var(--nav-h) + 64px);
+  padding-bottom: 100px;
+}
+
+.project-page-hero { margin-bottom: 48px; }
+
+.project-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.project-back {
+  font-family: 'Karla', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--light);
+  margin-right: 4px;
+  transition: color 0.2s;
+}
+.project-back:hover { color: var(--rust); }
+
+.project-page-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.project-page-sub {
+  font-size: 17px;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+.project-page-cover {
+  margin-bottom: 72px;
+}
+
+.project-page-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: var(--cream-dark);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.project-page-img-placeholder.tall { aspect-ratio: 4 / 3; }
+
+.project-page-body {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.project-page-overview h2,
+.project-page-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.project-page-overview p,
+.project-page-section p {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.project-page-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-detail-card {
+  background: var(--card-bg);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-label {
+  font-family: 'Karla', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.project-detail-card p:not(.detail-label) {
+  font-size: 14px;
+  color: var(--dark);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.project-page-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
