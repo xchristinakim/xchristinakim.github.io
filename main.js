@@ -32,6 +32,33 @@ projectItems.forEach(item => {
   if (item.dataset.category === 'design') item.style.display = 'none';
 });
 
+// ===== CONTACT FORM =====
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const res = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      contactForm.hidden = true;
+      formSuccess.hidden = false;
+    } else {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  });
+}
+
 // ===== NAV ACTIVE STATE =====
 const navLinks = document.querySelectorAll('.nav-link');
 const current = window.location.pathname.split('/').pop() || 'index.html';
