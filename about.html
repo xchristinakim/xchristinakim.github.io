@@ -88,17 +88,35 @@
       <div class="contact-left">
         <p class="contact-eyebrow">Get in touch</p>
         <h2 class="contact-heading">Let's work<br><em>together.</em></h2>
-        <p class="contact-sub">Whether it's a collaboration, an opportunity, or just a conversation — I'd love to hear from you.</p>
-      </div>
-      <div class="contact-right">
-        <a href="mailto:christina.kim670@u.northwestern.edu" class="contact-email">
-          christina.kim670@u.northwestern.edu
-          <span class="contact-arrow">→</span>
-        </a>
-        <div class="contact-links">
+        <p class="contact-sub">Whether it's a collaboration, an opportunity, or just a conversation — drop me a note and I'll get back to you.</p>
+        <div class="contact-social">
           <a href="https://www.linkedin.com/in/christina-kim-08b3a5230/" target="_blank" class="contact-link">LinkedIn ↗</a>
           <a href="About me/Chrisina Kim Resume.pdf" target="_blank" class="contact-link">Resume ↗</a>
         </div>
+      </div>
+      <div class="contact-right">
+        <!-- Replace YOUR_FORM_ID after signing up at formspree.io -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Name</label>
+              <input class="form-input" id="cf-name" type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email</label>
+              <input class="form-input" id="cf-email" type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-subject">Subject</label>
+            <input class="form-input" id="cf-subject" type="text" name="subject" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea class="form-input form-textarea" id="cf-message" name="message" placeholder="Tell me what's on your mind..." required></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send message →</button>
+        </form>
       </div>
     </div>
   </div>
