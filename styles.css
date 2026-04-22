@@ -363,6 +363,7 @@ a { text-decoration: none; color: inherit; }
 }
 .bleed-dark   { background: var(--dark); }
 .bleed-cream  { background: var(--cream-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.bleed-tint-dark { background: var(--rust-light); border-top: 1px solid var(--border); }
 
 .bleed-inner {
   max-width: var(--max-w);
@@ -661,6 +662,82 @@ a { text-decoration: none; color: inherit; }
   font-size: 13px;
 }
 .fun-photo-placeholder::after { content: "photo"; }
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-eyebrow {
+  font-family: 'Karla', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 16px;
+}
+
+.contact-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.contact-heading em { font-style: italic; color: var(--rust); }
+
+.contact-sub {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  padding: 22px 28px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  margin-bottom: 16px;
+  transition: border-color 0.2s, color 0.2s;
+  word-break: break-all;
+}
+.contact-email:hover { border-color: var(--rust); color: var(--rust); }
+
+.contact-arrow {
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.contact-email:hover .contact-arrow { transform: translateX(4px); }
+
+.contact-links { display: flex; gap: 16px; }
+
+.contact-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mid);
+  padding: 10px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-link:hover { border-color: var(--rust); color: var(--rust); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
