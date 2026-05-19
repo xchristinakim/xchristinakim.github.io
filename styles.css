@@ -798,6 +798,11 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+.project-page-imgs-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
