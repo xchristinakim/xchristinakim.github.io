@@ -718,7 +718,7 @@ a { text-decoration: none; color: inherit; }
   border: 1px solid var(--border);
   overflow: hidden;
 }
-.project-page-img img { width: 100%; height: auto; display: block; }
+.project-page-img img { max-width: 100%; max-height: 600px; width: auto; height: auto; display: block; margin: 0 auto; }
 
 .project-page-img-placeholder {
   width: 100%;
