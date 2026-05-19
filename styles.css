@@ -712,6 +712,15 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 72px;
 }
 
+.project-page-img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.project-page-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 .project-page-img-placeholder {
   width: 100%;
   aspect-ratio: 16 / 7;
