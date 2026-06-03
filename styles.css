@@ -974,6 +974,11 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.6;
 }
 
+/* ===== TOC SCROLL OFFSET ===== */
+#overview, #problem, #design-process, #final-design, #outcomes {
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
 /* ===== TOC SIDEBAR ===== */
 .toc-sidebar {
   position: fixed;
