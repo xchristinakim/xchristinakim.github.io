@@ -976,7 +976,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== TOC SCROLL OFFSET ===== */
 #overview, #problem, #design-process, #final-design, #outcomes {
-  scroll-margin-top: calc(var(--nav-h) + 24px);
+  scroll-margin-top: calc(var(--nav-h) + 60px);
 }
 
 /* ===== TOC SIDEBAR ===== */
