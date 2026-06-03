@@ -644,6 +644,19 @@ a { text-decoration: none; color: inherit; }
   gap: 12px;
 }
 
+.fun-photo-grid--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fun-photo-grid--four .hero-photo-area {
+  height: auto;
+}
+
+.fun-photo-grid--four .hero-photo-area img {
+  height: auto;
+  object-fit: unset;
+}
+
 .fun-photo {
   aspect-ratio: 4/3;
   border-radius: 10px;
@@ -979,5 +992,6 @@ a { text-decoration: none; color: inherit; }
   .footer-inner { flex-direction: column; gap: 28px; }
   .footer-links { flex-wrap: wrap; gap: 20px; }
   .fun-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .fun-photo-grid--four { grid-template-columns: repeat(2, 1fr); }
   .project-info { padding: 32px 24px; }
 }
