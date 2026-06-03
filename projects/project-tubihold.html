@@ -38,8 +38,17 @@
       <div class="project-page-img"><img src="../images/tubihold/group.jpg"></div>
     </div>
 
+    <aside class="toc-sidebar">
+      <p class="toc-label">Table of Contents</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">The Problem</a>
+      <a href="#design-process">Design Process</a>
+      <a href="#final-design">Final Design</a>
+      <a href="#outcomes">Outcomes</a>
+    </aside>
+
     <div class="project-page-body">
-      <div class="project-page-overview reveal">
+      <div class="project-page-overview reveal" id="overview">
         <h2>Overview</h2>
         <p>TubiHold is a non-invasive tube securement device designed to replace adhesive tape in pediatric cardiac intensive care settings. Developed in partnership with Lurie Children's Hospital, the device underwent 7+ design iterations grounded in clinical feedback, human factors research, and usability validation studies.</p>
          <br>
@@ -67,7 +76,7 @@
         </div>
       </div>
 
-      <div class="project-page-section reveal">
+      <div class="project-page-section reveal" id="problem">
         <h2>The Problem</h2>
 
 <p>
@@ -95,7 +104,7 @@
 
       <div class="project-page-img reveal"><img src="../images/tubihold/tubiproblems.png"></div>
 
-      <div class="project-page-section reveal">
+      <div class="project-page-section reveal" id="design-process">
         <h2>Design Process</h2>
         <p><h3>Redefining the Problem Through Observation</h3>
           <br>
@@ -175,7 +184,7 @@ This insight became a major turning point in the project. Our team shifted towar
 
       </div>
 
-      <div class="project-page-section reveal">
+      <div class="project-page-section reveal" id="final-design">
         <h2>Final Design Features</h2>
         <h3>Adjustable Dual-Point Securement</h3>
           <br>
@@ -203,7 +212,7 @@ This insight became a major turning point in the project. Our team shifted towar
       </div>
     </div>
     <br>
-    <div class="project-page-section reveal">
+    <div class="project-page-section reveal" id="outcomes">
         <h2>Outcomes</h2>
        
         <p>Our team continued developing the project beyond the academic design cycle. As of May 2026:</p>
@@ -252,5 +261,21 @@ This insight became a major turning point in the project. Our team shifted towar
   </div>
 
   <script src="../main.js"></script>
+  <script>
+    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+    const sections = [...document.querySelectorAll('#overview, #problem, #design-process, #final-design, #outcomes')];
+
+    function updateTOC() {
+      const offset = 120;
+      let current = sections[0].id;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= offset) current = s.id;
+      }
+      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    }
+
+    window.addEventListener('scroll', updateTOC, { passive: true });
+    updateTOC();
+  </script>
 </body>
 </html>

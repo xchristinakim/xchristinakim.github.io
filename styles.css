@@ -974,6 +974,55 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.6;
 }
 
+/* ===== TOC SIDEBAR ===== */
+.toc-sidebar {
+  position: fixed;
+  left: max(1rem, calc(50vw - 742px));
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
+}
+
+.toc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 10px;
+}
+
+.toc-sidebar a {
+  font-size: 12.5px;
+  color: var(--light);
+  text-decoration: none;
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid var(--border);
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.toc-sidebar a:hover {
+  color: var(--mid);
+  border-left-color: var(--mid);
+}
+
+.toc-sidebar a.active {
+  color: var(--rust);
+  border-left-color: var(--rust);
+  border-left-width: 3px;
+  font-weight: 700;
+  padding-left: 11px;
+}
+
+@media (max-width: 1520px) {
+  .toc-sidebar { display: none; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding-right: 52px; }
