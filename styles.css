@@ -977,7 +977,7 @@ a { text-decoration: none; color: inherit; }
 /* ===== TOC SIDEBAR ===== */
 .toc-sidebar {
   position: fixed;
-  left: max(1rem, calc(50vw - 742px));
+  left: max(0.5rem, calc(25vw - 355px));
   top: 50%;
   transform: translateY(-50%);
   width: 140px;
