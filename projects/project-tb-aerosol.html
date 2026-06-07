@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christina Kim — TB Aerosol Diagnostics</title>
+  <title>Christina Kim — TB Diagnostics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -27,69 +27,124 @@
     <div class="project-page-hero reveal">
       <div class="project-page-meta">
         <a href="../index.html" class="project-back">← All Projects</a>
-        <span class="tag tag-teal">Capstone</span>
-        <span class="tag tag-purple">CFD / ANSYS</span>
+        <span class="tag tag-teal">Global Health</span>
+        <span class="tag tag-purple">Biomedical Engineering</span>
       </div>
-      <h1 class="project-page-title">TB Aerosol Diagnostics</h1>
-      <p class="project-page-sub">Aerosol capture device for TB detection in patients who cannot produce sputum — using computational fluid dynamics and a nebulizer-based cough generator to capture and analyze exhaled aerosols.</p>
+      <h1 class="project-page-title">TB Diagnostics Testing</h1>
+      <p class="project-page-sub">A non-sputum aerosol capture device for tuberculosis screening — optimized via CFD simulations and verified with a custom cough generator test rig in a global partnership across two continents.</p>
     </div>
 
     <div class="project-page-cover reveal">
-      <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PUT IMAGE HERE CHRISTINA!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-      <div class="project-page-img-placeholder">image coming soon</div>
+      <div class="project-page-img"><img src="../images/tb-diagnostics/cover.jpg" alt="TB Diagnostics Project Cover"></div>
     </div>
 
+    <aside class="toc-sidebar">
+      <p class="toc-label">Table of Contents</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">The Problem</a>
+      <a href="#design-process">Design Process</a>
+      <a href="#final-design">Final Design</a>
+      <a href="#outcomes">Outcomes</a>
+    </aside>
+
     <div class="project-page-body">
-      <div class="project-page-overview reveal">
+      <div class="project-page-overview reveal" id="overview">
         <h2>Overview</h2>
-        <p>Aerosol capture device for TB detection in patients who cannot produce sputum — using computational fluid dynamics and a nebulizer-based cough generator to capture and analyze exhaled aerosols.</p>
+        <p>Tuberculosis (TB) remains one of the world's leading infectious diseases, yet many current diagnostic methods rely on sputum samples that can be difficult for patients—especially children and vulnerable populations—to produce. As part of a two-quarter Biomedical Engineering capstone project, our team partnered with researchers and clinicians in South Africa to develop a non-sputum TB diagnostic device capable of capturing aerosolized particles expelled during coughing for downstream PCR analysis.</p>
+        <br>
+        <p>The project was uniquely structured across two continents, with two team members based in South Africa conducting field research and testing while two team members, including myself, remained on Northwestern University's Evanston campus leading design, prototyping, and validation efforts. My primary role began with conducting literature reviews and investigating how internal device geometry could influence airflow behavior and particle capture. During the second quarter, I transitioned to hands-on development, building and testing physical prototypes, 3D printing design iterations, and constructing a cough generator test rig to experimentally evaluate device performance.</p>
       </div>
 
       <div class="project-page-details reveal">
         <div class="project-detail-card">
           <p class="detail-label">Role</p>
-          <p>Lead Engineer</p>
+          <p>R&amp;D Prototyping &amp; Fluid Dynamics Analysis</p>
         </div>
         <div class="project-detail-card">
           <p class="detail-label">Timeline</p>
-          <p>2024</p>
+          <p>Two Quarters (Capstone)</p>
         </div>
         <div class="project-detail-card">
           <p class="detail-label">Methods</p>
-          <p>CFD/ANSYS, SolidWorks, Fluid Mechanics, Biomechanics</p>
+          <p>Computational Fluid Dynamics (CFD), 3D Printing, Test Rig Engineering, Global Co-Design</p>
         </div>
         <div class="project-detail-card">
-          <p class="detail-label">Status</p>
-          <p>Active Development</p>
+          <p class="detail-label">Collaborators</p>
+          <p>Northwestern University &amp; South Africa Clinical Partners</p>
+        </div>
+      </div>
+      
+      <div class="project-page-section reveal" id="problem">
+        <h2>The Problem</h2>
+        <p>Current TB diagnostic methods often require sputum samples, which can be difficult to obtain and may delay diagnosis, particularly for pediatric and immunocompromised patients. Our goal was to develop a non-invasive, non-sputum diagnostic approach capable of collecting aerosolized particles containing tuberculosis bacteria during a patient's cough for PCR-based detection.</p>
+        <br>
+        <p>However, the existing aerosol sampling concept was not capturing enough particles on the collection medium to achieve the desired diagnostic sensitivity. Beyond improving particle capture, the design also needed to address real-world clinical requirements identified through stakeholder interviews in South Africa. The device needed to be:</p>
+        <ul style="margin-left: 2rem; margin-top: 1rem; margin-bottom: 1.5rem; line-height: 1.8;">
+          <li>Intuitive to use and fully portable</li>
+          <li>Lightweight enough for pediatric patients to handle easily</li>
+          <li>Completely safe from potential cross-contamination risks</li>
+          <li>Capable of collecting sufficient diagnostic samples within only a few coughs</li>
+        </ul>
+        <p>Balancing these user needs with engineering performance created a complex, multidisciplinary design challenge.</p>
+      </div>
+
+      <div class="project-page-img reveal"><img src="../images/tb-diagnostics/problem-metrics.png" alt="Engineering and clinical design requirements metrics"></div>
+
+      <div class="project-page-section reveal" id="design-process">
+        <h2>Design Process</h2>
+        
+        <h3>Fluid Dynamics Analysis &amp; Simulation</h3>
+        <p>The project began with an extensive literature review and background research focused on cough dynamics, aerosol transport, particle deposition, and existing TB diagnostic methods. Using insights from published research, I helped investigate how internal pipe geometry could influence airflow patterns and improve the likelihood of aerosolized particles depositing on a polyvinyl alcohol (PVA) collection surface.</p>
+        <br>
+        <p>Our team developed several design concepts and evaluated them through Computational Fluid Dynamics (CFD) simulations, comparing different cross-sectional geometries and collection surface orientations to better understand airflow behavior, pressure losses, and particle capture mechanisms.</p>
+
+        <div class="project-page-img reveal"><img src="../images/tb-diagnostics/cfd-analysis.png" alt="Computational Fluid Dynamics velocity and particle deposition simulation plots"></div>
+
+        <br>
+        <h3>Experimental Prototyping &amp; Validation</h3>
+        <p>Once promising concepts were identified through simulation, the project transitioned into prototype development and experimental validation. I created and refined CAD models, 3D printed prototype iterations, and helped construct a cough generator testing platform capable of producing repeatable aerosolized flows that mimicked human coughs.</p>
+        <br>
+        <p>This testing system allowed us to physically evaluate each design configuration and compare real-world performance against our computational predictions. Through iterative prototyping and testing, we gathered quantitative data on aerosol capture performance and identified design tradeoffs between airflow characteristics, manufacturability, and usability.</p>
+
+        <br>
+        <h3>Globally Distributed Teamwork</h3>
+        <p>One of the most valuable aspects of the project was working within a globally distributed team. While our teammates in South Africa conducted field interviews, observed clinical workflows, and gathered stakeholder feedback directly from healthcare providers and patients, the Evanston-based team translated those insights into engineering requirements and design solutions. This continuous exchange of information ensured that technical decisions remained grounded in real clinical needs rather than laboratory assumptions.</p>
+      </div>
+
+      <div class="project-page-section reveal" id="final-design">
+        <h2>Final Design Features</h2>
+        
+        <h3>Optimized Flow Geometry</h3>
+        <p>The final prototype incorporated an optimized internal flow path designed to maximize aerosol deposition onto a removable PVA collection surface while maintaining a compact and user-friendly form factor.</p>
+        
+        <br>
+        <h3>Clinical Workflow Integration</h3>
+        <p>Mechanical design features were carefully developed to support ease of assembly, quick sample collection, and sterile collection-medium swapping within clinical environments.</p>
+        
+        <br>
+        <div class="project-page-img"><img src="../images/tb-diagnostics/final-assembly.png" alt="Exploded view CAD model showing components of the final aerosol collection device"></div>
+        <br>
+
+        <h3>Cough Generator Testing Rig</h3>
+        <p>The project produced a custom-engineered cough generator testing platform that enabled repeatable validation of prototype performance and established a clear foundation for future optimization and clinical studies. By combining computational modeling with experimental testing, the team developed a data-driven approach for evaluating aerosol capture performance and informing future design iterations.</p>
+      </div>
+
+      <div class="project-page-section reveal" id="outcomes">
+        <h2>Outcomes</h2>
+        <p>This project demonstrated the value of combining engineering analysis, rapid prototyping, and user-centered design when addressing complex global health challenges. Through CFD modeling, prototype development, and physical testing, our team identified design configurations that improved aerosol capture performance and generated valuable insights for future device development.</p>
+        <br>
+        <p>Personally, I strengthened my skills in computational modeling, CAD, additive manufacturing, experimental design, and data-driven decision-making while gaining firsthand experience translating research into functional medical device prototypes.</p>
+        <br>
+        <p>Beyond the technical outcomes, the project reinforced the importance of interdisciplinary and international collaboration. Working across continents required strong communication, adaptability, and systems thinking to integrate clinical feedback, engineering analysis, and stakeholder needs into a cohesive design. The experience deepened my interest in medical device innovation and provided an early opportunity to apply engineering principles to a meaningful healthcare problem with real-world impact.</p>
+
+        <br>
+        <div class="project-page-imgs reveal">
+          <div class="project-page-img"><img src="../images/tb-diagnostics/team-testing.jpg" alt="Testing setup with cough generator rig"></div>
+          <div class="project-page-img"><img src="../images/tb-diagnostics/prototype-printed.jpg" alt="3D printed internal geometry prototypes"></div>
         </div>
       </div>
 
-      <div class="project-page-section reveal">
-        <h2>The Problem</h2>
-        <p>Placeholder — describe the problem space, clinical or user need, and why existing solutions fall short.</p>
-      </div>
-
-      <div class="project-page-imgs reveal">
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PUT IMAGE HERE CHRISTINA!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-        <div class="project-page-img-placeholder tall">process image</div>
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PUT IMAGE HERE CHRISTINA!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-        <div class="project-page-img-placeholder tall">prototype image</div>
-      </div>
-
-      <div class="project-page-section reveal">
-        <h2>Design Process</h2>
-        <p>Placeholder — walk through the research, iteration, and key decisions that shaped the final design.</p>
-      </div>
-
-      <div class="project-page-section reveal">
-        <h2>Outcome</h2>
-        <p>Placeholder — describe results, impact, and any next steps or future directions.</p>
-      </div>
     </div>
-
   </div>
 
   <div class="bleed bleed-dark">
@@ -110,5 +165,21 @@
   </div>
 
   <script src="../main.js"></script>
+  <script>
+    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+    const sections = [...document.querySelectorAll('#overview, #problem, #design-process, #final-design, #outcomes')];
+
+    function updateTOC() {
+      const offset = 120;
+      let current = sections[0].id;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= offset) current = s.id;
+      }
+      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    }
+
+    window.addEventListener('scroll', updateTOC, { passive: true });
+    updateTOC();
+  </script>
 </body>
 </html>
