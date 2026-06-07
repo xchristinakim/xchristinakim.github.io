@@ -23,14 +23,18 @@
   </nav>
 
   <div class="project-page">
-    <div class="toc-sidebar">
-  <div class="toc-sticky">
-    <a href="#overview" class="toc-link">Overview</a>
-    <a href="#the-problem" class="toc-link">The Problem</a>
-    <a href="#design-process" class="toc-link">Design Process</a>
-    <a href="#learning-outcomes" class="toc-link">Learning Outcomes</a>
-  </div>
-</div>
+    
+    <div class="toc-sidebar" style="display: block; position: sticky; top: 120px; height: fit-content; margin-bottom: 2rem;">
+      <div class="toc-sticky" style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+        <div style="font-family: 'Karla', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: #999; text-transform: uppercase;">Table of Contents</div>
+        <div style="display: flex; flex-direction: column; gap: 14px; border-left: 2px solid #e5e5e5; padding-left: 14px; align-items: flex-start;">
+          <a href="#overview" class="toc-link" style="display: block; text-decoration: none; margin-left: -16px; padding-left: 14px;">Overview</a>
+          <a href="#the-problem" class="toc-link" style="display: block; text-decoration: none; margin-left: -16px; padding-left: 14px;">The Problem</a>
+          <a href="#design-process" class="toc-link" style="display: block; text-decoration: none; margin-left: -16px; padding-left: 14px;">Design Process</a>
+          <a href="#learning-outcomes" class="toc-link" style="display: block; text-decoration: none; margin-left: -16px; padding-left: 14px;">Outcomes</a>
+        </div>
+      </div>
+    </div>
 
     <div class="project-page-hero reveal">
       <div class="project-page-meta">
@@ -47,7 +51,8 @@
     </div>
 
     <div class="project-page-body">
-      <div class="project-page-overview reveal" id="overview">
+      
+      <div class="project-page-overview reveal" id="overview" style="scroll-margin-top: 120px;">
         <h2>Overview</h2>
         <p>As an R&amp;D Exploratory & Innovation Engineering Intern, I worked on early-stage medical device innovation projects within a highly collaborative, multidisciplinary environment. My role involved investigating unmet user needs, translating insights into design opportunities, and rapidly developing and evaluating concepts through iterative prototyping and testing. Working closely with engineers, human factors specialists, designers, and commercial leads, I contributed to projects that balanced technical feasibility, clinical considerations, and user experience.</p>
       </div>
@@ -71,12 +76,12 @@
         </div>
       </div>
       
-      <div class="project-page-section reveal" id="the-problem">
+      <div class="project-page-section reveal" id="the-problem" style="scroll-margin-top: 120px;">
         <h2>The Problem</h2>
         <p>Due to confidentiality agreements, specific project details cannot be disclosed. The challenge centered on addressing a complex healthcare need within a medical device context, where existing solutions presented opportunities for improvement in usability, workflow integration, user experience, and overall effectiveness. Like many exploratory R&amp;D efforts, the problem space was initially ambiguous and required significant discovery work to better understand user needs, constraints, and opportunities before converging on potential solutions.</p>
       </div>
 
-      <div class="project-page-section reveal" id="design-process">
+      <div class="project-page-section reveal" id="design-process" style="scroll-margin-top: 120px;">
         <h2>Design Process</h2>
         
         <h3>Prototype Evaluation & User Testing</h3>
@@ -93,7 +98,7 @@
         <p>Recognizing that this challenge extended beyond the scope of a single project, I independently initiated a separate business case exploring the standardization of disposable product sets across the organization. The proposal was motivated by both the technical limitations encountered during development and the organizational inefficiencies observed across teams. By investigating opportunities to reduce product variation, improve compatibility, simplify development efforts, and lower manufacturing and operational costs, I highlighted how a more standardized approach could create value across engineering, manufacturing, and future innovation initiatives.</p>
       </div>
 
-      <div class="project-page-section reveal" id="learning-outcomes">
+      <div class="project-page-section reveal" id="learning-outcomes" style="scroll-margin-top: 120px;">
         <h2>Learning Outcomes</h2>
         <p>Working in a medical device company gave me a much deeper understanding of the complexity behind developing healthcare technologies in a regulated, global environment. I learned that successful products are shaped by far more than technical performance alone; usability, clinical workflows, manufacturing constraints, regional product variations, regulatory considerations, business strategy, and patient safety all play critical roles in the development process. Even seemingly small design decisions can have downstream impacts across supply chains, training programs, product compatibility, and user adoption.</p>
         <br> 
@@ -133,20 +138,27 @@
 
   <script src="../main.js"></script>
   <script>
-    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+    const tocLinks = document.querySelectorAll('.toc-link');
     const sections = [...document.querySelectorAll('#overview, #the-problem, #design-process, #learning-outcomes')];
 
-    function updateTOC() {
-      const offset = 120;
-      let current = sections[0].id;
-      for (const s of sections) {
-        if (s.getBoundingClientRect().top <= offset) current = s.id;
-      }
-      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
-    }
+    // Using IntersectionObserver avoids calculation bugs when headers are offset
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -80% 0px',
+      threshold: 0
+    };
 
-    window.addEventListener('scroll', updateTOC, { passive: true });
-    updateTOC();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
