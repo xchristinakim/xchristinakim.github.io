@@ -23,6 +23,14 @@
   </nav>
 
   <div class="project-page">
+    <div class="toc-sidebar">
+  <div class="toc-sticky">
+    <a href="#overview" class="toc-link">Overview</a>
+    <a href="#the-problem" class="toc-link">The Problem</a>
+    <a href="#design-process" class="toc-link">Design Process</a>
+    <a href="#learning-outcomes" class="toc-link">Learning Outcomes</a>
+  </div>
+</div>
 
     <div class="project-page-hero reveal">
       <div class="project-page-meta">
@@ -121,35 +129,34 @@
 
   <script src="../main.js"></script>
   <script>
-    const tocLinks = document.querySelectorAll('.toc-sidebar a');
-    const sections = [...document.querySelectorAll('#overview, #the-problem, #design-process, #learning-outcomes')];
+// 1. Select all links in the sidebar and the sections they point to
+const tocLinks = document.querySelectorAll('.toc-sidebar a');
+const sections = document.querySelectorAll('.project-page-section, .project-page-overview');
 
-    function updateTOC() {
-      const offset = 120;
-      let current = sections[0].id;
+// 2. Set up the observer
+const options = {
+  root: null,
+  rootMargin: '-20% 0px -70% 0px', // Detects section when it's in the top 30% of the screen
+  threshold: 0
+};
 
-      for (const s of sections) {
-        if (s.getBoundingClientRect().top <= offset) {
-          current = s.id;
-        }
-      }
-
-      tocLinks.forEach(l =>
-        l.classList.toggle(
-          'active',
-          l.getAttribute('href') === '#' + current
-        )
-      );
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Remove active class from all links
+      tocLinks.forEach(link => link.classList.remove('active'));
+      
+      // Add active class to the link matching the current section ID
+      const activeLink = document.querySelector(`.toc-sidebar a[href="#${entry.target.id}"]`);
+      if (activeLink) activeLink.classList.add('active');
     }
+  });
+}, options);
 
-    window.addEventListener('scroll', updateTOC, { passive: true });
-    updateTOC();
+// 3. Start observing each section
+sections.forEach(section => observer.observe(section));
+  
   </script>
 
-</body>
-</html>
-
-
-  
 </body>
 </html>
