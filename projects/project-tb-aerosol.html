@@ -58,11 +58,11 @@
       <div class="project-page-details reveal">
         <div class="project-detail-card">
           <p class="detail-label">Role</p>
-          <p>R&amp;D Prototyping &amp; Fluid Dynamics Analysis</p>
+          <p>Prototype Testing & Validation Lead</p>
         </div>
         <div class="project-detail-card">
           <p class="detail-label">Timeline</p>
-          <p>Two Quarters (Capstone)</p>
+          <p>September 2025- March 2026</p>
         </div>
         <div class="project-detail-card">
           <p class="detail-label">Methods</p>
@@ -165,21 +165,47 @@
   </div>
 
   <script src="../main.js"></script>
+  <script src="../main.js"></script>
   <script>
     const tocLinks = document.querySelectorAll('.toc-sidebar a');
-    const sections = [...document.querySelectorAll('#overview, #problem, #design-process, #final-design, #outcomes')];
+    
+    // Track the h2 headings directly inside your specific target containers
+    const sections = [
+      document.querySelector('#overview h2'),
+      document.querySelector('#problem h2'),
+      document.querySelector('#design-process h2'),
+      document.querySelector('#final-design h2'),
+      document.querySelector('#outcomes h2')
+    ].filter(el => el !== null); // Prevents errors if a section is temporarily missing
 
     function updateTOC() {
-      const offset = 120;
-      let current = sections[0].id;
-      for (const s of sections) {
-        if (s.getBoundingClientRect().top <= offset) current = s.id;
+      const offset = 160; // Gutter space accounting for your fixed top navigation menu
+      let current = "";
+
+      sections.forEach(s => {
+        // Find the parent element ID to map back to the anchor href tag
+        const parentId = s.parentElement.id;
+        if (s.getBoundingClientRect().top <= offset) {
+          current = parentId;
+        }
+      });
+
+      // If we haven't reached the first header yet, default to overview
+      if (!current && sections.length > 0) {
+        current = sections[0].parentElement.id;
       }
-      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+
+      tocLinks.forEach(l => {
+        l.classList.toggle(
+          'active', 
+          l.getAttribute('href') === '#' + current
+        );
+      });
     }
 
     window.addEventListener('scroll', updateTOC, { passive: true });
     updateTOC();
   </script>
+  
 </body>
 </html>
