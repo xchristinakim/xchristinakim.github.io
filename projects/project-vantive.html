@@ -138,19 +138,30 @@
   <script src="../main.js"></script>
   <script>
     const tocLinks = document.querySelectorAll('.toc-sidebar a');
-    const sections = [...document.querySelectorAll('#overview, #the-problem, #design-process, #learning-outcomes')];
+const sections = [...document.querySelectorAll('#overview, #the-problem, #design-process, #learning-outcomes')];
 
-    function updateTOC() {
-      const offset = 120;
-      let current = sections[0].id;
-      for (const s of sections) {
-        if (s.getBoundingClientRect().top <= offset) current = s.id;
-      }
-      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+function updateTOC() {
+  const offset = 120;
+  let current = sections[0].id;
+
+  for (const s of sections) {
+    if (s.getBoundingClientRect().top <= offset) {
+      current = s.id;
     }
+  }
 
-    window.addEventListener('scroll', updateTOC, { passive: true });
-    updateTOC();
+  tocLinks.forEach(l =>
+    l.classList.toggle(
+      'active',
+      l.getAttribute('href') === '#' + current
+    )
+  );
+}
+
+window.addEventListener('scroll', updateTOC, { passive: true });
+updateTOC();
   </script>
+
+  
 </body>
 </html>
