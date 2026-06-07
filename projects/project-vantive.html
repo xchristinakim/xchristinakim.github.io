@@ -133,34 +133,20 @@
 
   <script src="../main.js"></script>
   <script>
-// 1. Select all links in the sidebar and the sections they point to
-const tocLinks = document.querySelectorAll('.toc-sidebar a');
-const sections = document.querySelectorAll('.project-page-section, .project-page-overview');
+    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+    const sections = [...document.querySelectorAll('#overview, #the-problem, #design-process, #learning-outcomes')];
 
-// 2. Set up the observer
-const options = {
-  root: null,
-  rootMargin: '-20% 0px -70% 0px', // Detects section when it's in the top 30% of the screen
-  threshold: 0
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Remove active class from all links
-      tocLinks.forEach(link => link.classList.remove('active'));
-      
-      // Add active class to the link matching the current section ID
-      const activeLink = document.querySelector(`.toc-sidebar a[href="#${entry.target.id}"]`);
-      if (activeLink) activeLink.classList.add('active');
+    function updateTOC() {
+      const offset = 120;
+      let current = sections[0].id;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= offset) current = s.id;
+      }
+      tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
     }
-  });
-}, options);
 
-// 3. Start observing each section
-sections.forEach(section => observer.observe(section));
-  
+    window.addEventListener('scroll', updateTOC, { passive: true });
+    updateTOC();
   </script>
-
 </body>
 </html>
